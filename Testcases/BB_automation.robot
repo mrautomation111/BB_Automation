@@ -1,3 +1,4 @@
+***documentation***
 *** Settings ***
 Resource          ../Libraries/librarymanager.txt
 Resource          ../Resources/ResourceManger.txt
