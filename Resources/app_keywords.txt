@@ -3,7 +3,7 @@ Resource          ../Libraries/librarymanager.txt
 
 *** Variables ***
 ${url}            https://bbsitedemo.btbanking.com/onlineserv/CM/?D=5472
-${browser}        opera
+${browser}        gc
 
 *** Keywords ***
 Openbb_app

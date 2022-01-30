@@ -1,0 +1,24 @@
+*** Settings ***
+Resource          ../Libraries/librarymanager.txt
+
+*** Variables ***
+${ObjFile}        C:\\Users\\Sivakumar U\\Desktop\\RobotTEST\\BBAuto\\BB_Automation\\Testdata\\Objectrepo\\objectrepo.xlsx
+
+*** Keywords ***
+web_clickelement
+    [Arguments]    ${pagename}    ${fieldname}
+    GetLocatorDetails    ${pagename}    ${fieldname}
+    Wait Until Element Is Visible    ${locator}    ${beforewait}
+    Click Element    ${locator}
+    Sleep    ${afterwait}
+
+GetLocatorDetails
+    [Arguments]    ${pagename}    ${fieldname}
+    excellib.Openexcel    ${ObjFile}    Sheet
+    excellib.Filterbasedonpagenameandfieldname    ${pagename}    ${fieldname}
+    ${result}    excellib.Converttolist
+    Set Test Variable    ${name}    ${result}[0][0]
+    Set Test Variable    ${field}    ${result}[0][1]
+    Set Test Variable    ${locator}    ${result}[0][2]
+    Set Test Variable    ${beforewait}    ${result}[0][3]
+    Set Test Variable    ${afterwait}    ${result}[0][4]

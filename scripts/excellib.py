@@ -15,10 +15,20 @@ class excellib:
         self.f_data=df[df[keycol]==val]
         return self.f_data
     
+    def filterbasedonpagenameandfieldname(self,pagecolname,fieldcolname):
+        df=self.df
+        f_data=df[df['pagename']==pagecolname]
+        self.f_rowdata=f_data[f_data['fieldname']==fieldcolname]
+        return self.f_rowdata
+
+
     def Converttolist(self):
-        df=self.f_data.values.tolist()
+        df=self.f_rowdata.values.tolist()
         self.listval=df
         return self.listval
+
+
+
 
 
         
@@ -28,6 +38,7 @@ class excellib:
 
 
 # e=excellib()
-# e.openexcel("studentsNamelist.xlsx","Sheet")
-# e.filterbasedonkey("Name","Ola")
+# e.openexcel("C:\\Users\\Sivakumar U\\Desktop\\RobotTEST\\BBAuto\\BB_Automation\\Testdata\\Objectrepo\\objectrepo.xlsx","Sheet")
+# # e.filterbasedonkey("Name","Ola")
+# e.filterbasedonpagenameandfieldname('landingpage','loginlink')
 # print(e.Converttolist())
