@@ -2,15 +2,16 @@
 Resource          ../Libraries/librarymanager.txt
 
 *** Variables ***
-${ObjFile}        C:\\Users\\Sivakumar U\\Desktop\\RobotTEST\\BBAuto\\BB_Automation\\Testdata\\Objectrepo\\objectrepo.xlsx
+${ObjFile}        ${EXECDIR}//Testdata//Objectrepo//objectrepo.xlsx
 
 *** Keywords ***
 web_clickelement
     [Arguments]    ${pagename}    ${fieldname}
     GetLocatorDetails    ${pagename}    ${fieldname}
-    Wait Until Element Is Visible    ${locator}    ${beforewait}
-    Click Element    ${locator}
+    ${keywordstatus}    Run Keyword And Return Status    Wait Until Element Is Visible    ${locator}    ${beforewait}
+    ${keywordstatus}    Run Keyword And Return Status    Click Element    ${locator}
     Sleep    ${afterwait}
+    Run Keyword If    "${keywordstatus}"=="False"    Fail    ${fieldname} is not visible on the screen \ ${pagename}... so please check
 
 GetLocatorDetails
     [Arguments]    ${pagename}    ${fieldname}
