@@ -1,0 +1,5 @@
+*** Settings ***
+Library           SeleniumLibrary
+Library           ExcelLibrary
+Library           Collections
+Library           ../scripts/excellib.py
