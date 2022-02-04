@@ -9,12 +9,30 @@ web_clickelement
     [Arguments]    ${pagename}    ${fieldname}
     GetLocatorDetails    ${pagename}    ${fieldname}
     ${keywordstatus}    Run Keyword And Return Status    Wait Until Element Is Visible    ${locator}    ${beforewait}
-    ${keywordstatus}    Run Keyword And Return Status    Click Element    ${locator}
+    ${keywordstatus}    Run Keyword And Return Status    Wait Until Keyword Succeeds    10    2s    Click Element    ${locator}
+    Sleep    ${afterwait}
+    Run Keyword If    "${keywordstatus}"=="False"    Fail    ${fieldname} is not visible on the screen \ ${pagename}... so please check
+
+web_inputtext
+    [Arguments]    ${pagename}    ${fieldname}    ${inputtext}
+    GetLocatorDetails    ${pagename}    ${fieldname}
+    ${keywordstatus}    Run Keyword And Return Status    Wait Until Element Is Visible    ${locator}    ${beforewait}
+    ${keywordstatus}    Run Keyword And Return Status    Wait Until Keyword Succeeds    3    2s    Input Text    ${locator}    ${inputtext}
+    Sleep    ${afterwait}
+    Run Keyword If    "${keywordstatus}"=="False"    Fail    ${fieldname} is not visible on the screen \ ${pagename}... so please check
+
+web_Mouseover
+    [Arguments]    ${pagename}    ${fieldname}
+    GetLocatorDetails    ${pagename}    ${fieldname}
+    ${keywordstatus}    Run Keyword And Return Status    Wait Until Element Is Visible    ${locator}    ${beforewait}
+    ${keywordstatus}    Run Keyword And Return Status    Wait Until Keyword Succeeds    10    2s    Mouse Over    ${locator}
     Sleep    ${afterwait}
     Run Keyword If    "${keywordstatus}"=="False"    Fail    ${fieldname} is not visible on the screen \ ${pagename}... so please check
 
 GetLocatorDetails
     [Arguments]    ${pagename}    ${fieldname}
+    [Timeout]
+    Log Many    ${ObjFile}    ${pagename}    ${fieldname}
     excellib.Openexcel    ${ObjFile}    Sheet
     excellib.Filterbasedonpagenameandfieldname    ${pagename}    ${fieldname}
     ${result}    excellib.Converttolist
