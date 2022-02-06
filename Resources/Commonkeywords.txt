@@ -48,7 +48,7 @@ GetBatchTemplateDetails
     [Timeout]
     Log Many    ${BatchTemplateFile}    ${batchtemplatenumber}
     excellib.Openexcel    ${BatchTemplateFile}    Maintain batch template
-    excellib.filterbasedonnumber    ${batchtemplatenumber}
+    excellib.filterbasedonalphabet    ${batchtemplatenumber}
     ${result}    excellib.Converttolist
     Set Test Variable    ${template_name}    ${result}[0][1]
     Set Test Variable    ${template_description}    ${result}[0][2]
