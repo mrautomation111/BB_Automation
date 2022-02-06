@@ -21,24 +21,23 @@ class excellib:
         self.f_rowdata=f_data[f_data['fieldname']==fieldcolname]
         return self.f_rowdata
 
+    def filterbasedonnumber(self,alphabet):
+        df=self.df
+        #f_data=df[df['Position']==alphabet]
+        f_data=df[df['Position']==alphabet]
+        self.f_rowdata=f_data[f_data['Position']==alphabet]
+        #self.f_rowdata=df.loc[alphabet-1]
+        return self.f_rowdata
 
-    def Converttolist(self):
+    def converttolist(self):
         df=self.f_rowdata.values.tolist()
         self.listval=df
         return self.listval
 
-
-
-
-
-        
-
-
-
-
-
-# e=excellib()
-# e.openexcel("C:\\Users\\Sivakumar U\\Desktop\\RobotTEST\\BBAuto\\BB_Automation\\Testdata\\Objectrepo\\objectrepo.xlsx","Sheet")
-# # e.filterbasedonkey("Name","Ola")
-# e.filterbasedonpagenameandfieldname('landingpage','loginlink')
-# print(e.Converttolist())
+e=excellib()
+e.openexcel("I:\OLA_Robot_Framework\git_automation\BB_Automation\Testdata\PaymentsAndTransfers.xlsx", 'Maintain batch template' )
+#print(e)
+#e.filtervalue("name","ola")
+e.filterbasedonnumber('b')
+result = e.converttolist()
+print(result[0][1])
