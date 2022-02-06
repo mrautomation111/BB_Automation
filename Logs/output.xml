@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.6.8 on win32)" generated="20220206 13:04:07.942" rpa="false">
+<robot generator="Robot 3.1.2 (Python 3.6.8 on win32)" generated="20220205 09:57:12.273" rpa="false">
 <suite id="s1" name="BB automation" source="I:\OLA_Robot_Framework\git_automation\BB_Automation\Testcases\BB_automation.robot">
 <test id="s1-t1" name="TC01_Accountsummaryverfication">
 <kw name="Openbb_app" library="app_keywords">
@@ -9,8 +9,8 @@
 <arg>${url}</arg>
 <arg>${browser}</arg>
 </arguments>
-<msg timestamp="20220206 13:04:09.607" level="INFO">Opening browser 'gc' to base url 'https://bbsitedemo.btbanking.com/onlineserv/CM/?D=5472'.</msg>
-<status status="PASS" starttime="20220206 13:04:09.606" endtime="20220206 13:04:12.130"></status>
+<msg timestamp="20220205 09:57:14.159" level="INFO">Opening browser 'gc' to base url 'https://bbsitedemo.btbanking.com/onlineserv/CM/?D=5472'.</msg>
+<status status="PASS" starttime="20220205 09:57:14.158" endtime="20220205 09:57:16.979"></status>
 </kw>
 <kw name="web_clickelement" library="Commonkeywords">
 <arguments>
@@ -29,31 +29,31 @@
 <arg>${pagename}</arg>
 <arg>${fieldname}</arg>
 </arguments>
-<msg timestamp="20220206 13:04:12.133" level="INFO">I:\OLA_Robot_Framework\git_automation\BB_Automation//Testdata//Objectrepo//objectrepo.xlsx</msg>
-<msg timestamp="20220206 13:04:12.133" level="INFO">landingpage</msg>
-<msg timestamp="20220206 13:04:12.133" level="INFO">loginlink</msg>
-<status status="PASS" starttime="20220206 13:04:12.132" endtime="20220206 13:04:12.133"></status>
+<msg timestamp="20220205 09:57:16.981" level="INFO">I:\OLA_Robot_Framework\git_automation\BB_Automation//Testdata//Objectrepo//objectrepo.xlsx</msg>
+<msg timestamp="20220205 09:57:16.981" level="INFO">landingpage</msg>
+<msg timestamp="20220205 09:57:16.981" level="INFO">loginlink</msg>
+<status status="PASS" starttime="20220205 09:57:16.980" endtime="20220205 09:57:16.981"></status>
 </kw>
 <kw name="Openexcel" library="excellib">
 <arguments>
 <arg>${ObjFile}</arg>
 <arg>Sheet</arg>
 </arguments>
-<status status="PASS" starttime="20220206 13:04:12.133" endtime="20220206 13:04:12.174"></status>
+<status status="PASS" starttime="20220205 09:57:16.981" endtime="20220205 09:57:17.019"></status>
 </kw>
 <kw name="Filterbasedonpagenameandfieldname" library="excellib">
 <arguments>
 <arg>${pagename}</arg>
 <arg>${fieldname}</arg>
 </arguments>
-<status status="PASS" starttime="20220206 13:04:12.174" endtime="20220206 13:04:12.175"></status>
+<status status="PASS" starttime="20220205 09:57:17.020" endtime="20220205 09:57:17.022"></status>
 </kw>
 <kw name="Converttolist" library="excellib">
 <assign>
 <var>${result}</var>
 </assign>
-<msg timestamp="20220206 13:04:12.176" level="INFO">${result} = [['landingpage', 'loginlink', '//a[text()="Click here to view an Interactive Demo"]', '20s', '1s', nan]]</msg>
-<status status="PASS" starttime="20220206 13:04:12.176" endtime="20220206 13:04:12.176"></status>
+<msg timestamp="20220205 09:57:17.022" level="INFO">${result} = [['landingpage', 'loginlink', '//a[text()="Click here to view an Interactive Demo"]', '20s', '1s', nan]]</msg>
+<status status="PASS" starttime="20220205 09:57:17.022" endtime="20220205 09:57:17.022"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -61,8 +61,8 @@
 <arg>${name}</arg>
 <arg>${result}[0][0]</arg>
 </arguments>
-<msg timestamp="20220206 13:04:12.177" level="INFO">${name} = landingpage</msg>
-<status status="PASS" starttime="20220206 13:04:12.177" endtime="20220206 13:04:12.178"></status>
+<msg timestamp="20220205 09:57:17.023" level="INFO">${name} = landingpage</msg>
+<status status="PASS" starttime="20220205 09:57:17.022" endtime="20220205 09:57:17.023"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -70,8 +70,8 @@
 <arg>${field}</arg>
 <arg>${result}[0][1]</arg>
 </arguments>
-<msg timestamp="20220206 13:04:12.179" level="INFO">${field} = loginlink</msg>
-<status status="PASS" starttime="20220206 13:04:12.178" endtime="20220206 13:04:12.180"></status>
+<msg timestamp="20220205 09:57:17.025" level="INFO">${field} = loginlink</msg>
+<status status="PASS" starttime="20220205 09:57:17.023" endtime="20220205 09:57:17.025"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -79,8 +79,8 @@
 <arg>${locator}</arg>
 <arg>${result}[0][2]</arg>
 </arguments>
-<msg timestamp="20220206 13:04:12.181" level="INFO">${locator} = //a[text()="Click here to view an Interactive Demo"]</msg>
-<status status="PASS" starttime="20220206 13:04:12.180" endtime="20220206 13:04:12.181"></status>
+<msg timestamp="20220205 09:57:17.026" level="INFO">${locator} = //a[text()="Click here to view an Interactive Demo"]</msg>
+<status status="PASS" starttime="20220205 09:57:17.025" endtime="20220205 09:57:17.026"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -88,8 +88,8 @@
 <arg>${beforewait}</arg>
 <arg>${result}[0][3]</arg>
 </arguments>
-<msg timestamp="20220206 13:04:12.182" level="INFO">${beforewait} = 20s</msg>
-<status status="PASS" starttime="20220206 13:04:12.181" endtime="20220206 13:04:12.182"></status>
+<msg timestamp="20220205 09:57:17.027" level="INFO">${beforewait} = 20s</msg>
+<status status="PASS" starttime="20220205 09:57:17.026" endtime="20220205 09:57:17.028"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -97,10 +97,10 @@
 <arg>${afterwait}</arg>
 <arg>${result}[0][4]</arg>
 </arguments>
-<msg timestamp="20220206 13:04:12.183" level="INFO">${afterwait} = 1s</msg>
-<status status="PASS" starttime="20220206 13:04:12.182" endtime="20220206 13:04:12.183"></status>
+<msg timestamp="20220205 09:57:17.029" level="INFO">${afterwait} = 1s</msg>
+<status status="PASS" starttime="20220205 09:57:17.028" endtime="20220205 09:57:17.029"></status>
 </kw>
-<status status="PASS" starttime="20220206 13:04:12.131" endtime="20220206 13:04:12.183"></status>
+<status status="PASS" starttime="20220205 09:57:16.980" endtime="20220205 09:57:17.029"></status>
 </kw>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
@@ -118,10 +118,10 @@
 <arg>${locator}</arg>
 <arg>${beforewait}</arg>
 </arguments>
-<status status="PASS" starttime="20220206 13:04:12.183" endtime="20220206 13:04:12.212"></status>
+<status status="PASS" starttime="20220205 09:57:17.029" endtime="20220205 09:57:17.060"></status>
 </kw>
-<msg timestamp="20220206 13:04:12.213" level="INFO">${keywordstatus} = True</msg>
-<status status="PASS" starttime="20220206 13:04:12.183" endtime="20220206 13:04:12.213"></status>
+<msg timestamp="20220205 09:57:17.060" level="INFO">${keywordstatus} = True</msg>
+<status status="PASS" starttime="20220205 09:57:17.029" endtime="20220205 09:57:17.061"></status>
 </kw>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
@@ -148,21 +148,21 @@
 <arguments>
 <arg>${locator}</arg>
 </arguments>
-<msg timestamp="20220206 13:04:12.215" level="INFO">Clicking element '//a[text()="Click here to view an Interactive Demo"]'.</msg>
-<status status="PASS" starttime="20220206 13:04:12.214" endtime="20220206 13:04:12.268"></status>
+<msg timestamp="20220205 09:57:17.063" level="INFO">Clicking element '//a[text()="Click here to view an Interactive Demo"]'.</msg>
+<status status="PASS" starttime="20220205 09:57:17.062" endtime="20220205 09:57:19.053"></status>
 </kw>
-<status status="PASS" starttime="20220206 13:04:12.214" endtime="20220206 13:04:12.268"></status>
+<status status="PASS" starttime="20220205 09:57:17.061" endtime="20220205 09:57:19.053"></status>
 </kw>
-<msg timestamp="20220206 13:04:12.268" level="INFO">${keywordstatus} = True</msg>
-<status status="PASS" starttime="20220206 13:04:12.213" endtime="20220206 13:04:12.268"></status>
+<msg timestamp="20220205 09:57:19.054" level="INFO">${keywordstatus} = True</msg>
+<status status="PASS" starttime="20220205 09:57:17.061" endtime="20220205 09:57:19.054"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>${afterwait}</arg>
 </arguments>
-<msg timestamp="20220206 13:04:13.282" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220206 13:04:12.268" endtime="20220206 13:04:13.282"></status>
+<msg timestamp="20220205 09:57:20.068" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220205 09:57:19.054" endtime="20220205 09:57:20.068"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -171,15 +171,15 @@
 <arg>Fail</arg>
 <arg>${fieldname} is not visible on the screen \ ${pagename}... so please check</arg>
 </arguments>
-<status status="PASS" starttime="20220206 13:04:13.282" endtime="20220206 13:04:13.282"></status>
+<status status="PASS" starttime="20220205 09:57:20.068" endtime="20220205 09:57:20.069"></status>
 </kw>
-<status status="PASS" starttime="20220206 13:04:12.131" endtime="20220206 13:04:13.282"></status>
+<status status="PASS" starttime="20220205 09:57:16.980" endtime="20220205 09:57:20.069"></status>
 </kw>
-<status status="PASS" starttime="20220206 13:04:09.606" endtime="20220206 13:04:13.282"></status>
+<status status="PASS" starttime="20220205 09:57:14.157" endtime="20220205 09:57:20.069"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220206 13:04:13.282" endtime="20220206 13:04:14.410"></status>
+<status status="PASS" starttime="20220205 09:57:20.070" endtime="20220205 09:57:20.238"></status>
 </kw>
 <kw name="web_Mouseover" library="Commonkeywords">
 <arguments>
@@ -198,31 +198,31 @@
 <arg>${pagename}</arg>
 <arg>${fieldname}</arg>
 </arguments>
-<msg timestamp="20220206 13:04:14.412" level="INFO">I:\OLA_Robot_Framework\git_automation\BB_Automation//Testdata//Objectrepo//objectrepo.xlsx</msg>
-<msg timestamp="20220206 13:04:14.412" level="INFO">landingpage</msg>
-<msg timestamp="20220206 13:04:14.412" level="INFO">Administration</msg>
-<status status="PASS" starttime="20220206 13:04:14.411" endtime="20220206 13:04:14.412"></status>
+<msg timestamp="20220205 09:57:20.240" level="INFO">I:\OLA_Robot_Framework\git_automation\BB_Automation//Testdata//Objectrepo//objectrepo.xlsx</msg>
+<msg timestamp="20220205 09:57:20.240" level="INFO">landingpage</msg>
+<msg timestamp="20220205 09:57:20.240" level="INFO">Administration</msg>
+<status status="PASS" starttime="20220205 09:57:20.240" endtime="20220205 09:57:20.241"></status>
 </kw>
 <kw name="Openexcel" library="excellib">
 <arguments>
 <arg>${ObjFile}</arg>
 <arg>Sheet</arg>
 </arguments>
-<status status="PASS" starttime="20220206 13:04:14.413" endtime="20220206 13:04:14.442"></status>
+<status status="PASS" starttime="20220205 09:57:20.241" endtime="20220205 09:57:20.285"></status>
 </kw>
 <kw name="Filterbasedonpagenameandfieldname" library="excellib">
 <arguments>
 <arg>${pagename}</arg>
 <arg>${fieldname}</arg>
 </arguments>
-<status status="PASS" starttime="20220206 13:04:14.442" endtime="20220206 13:04:14.443"></status>
+<status status="PASS" starttime="20220205 09:57:20.285" endtime="20220205 09:57:20.288"></status>
 </kw>
 <kw name="Converttolist" library="excellib">
 <assign>
 <var>${result}</var>
 </assign>
-<msg timestamp="20220206 13:04:14.445" level="INFO">${result} = [['landingpage', 'Administration', "//a[@id='topTabAdmin']", '20s', '1s', nan]]</msg>
-<status status="PASS" starttime="20220206 13:04:14.444" endtime="20220206 13:04:14.445"></status>
+<msg timestamp="20220205 09:57:20.289" level="INFO">${result} = [['landingpage', 'Administration', "//a[@id='topTabAdmin']", '20s', '1s', nan]]</msg>
+<status status="PASS" starttime="20220205 09:57:20.289" endtime="20220205 09:57:20.289"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -230,8 +230,8 @@
 <arg>${name}</arg>
 <arg>${result}[0][0]</arg>
 </arguments>
-<msg timestamp="20220206 13:04:14.445" level="INFO">${name} = landingpage</msg>
-<status status="PASS" starttime="20220206 13:04:14.445" endtime="20220206 13:04:14.446"></status>
+<msg timestamp="20220205 09:57:20.290" level="INFO">${name} = landingpage</msg>
+<status status="PASS" starttime="20220205 09:57:20.290" endtime="20220205 09:57:20.290"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -239,8 +239,8 @@
 <arg>${field}</arg>
 <arg>${result}[0][1]</arg>
 </arguments>
-<msg timestamp="20220206 13:04:14.446" level="INFO">${field} = Administration</msg>
-<status status="PASS" starttime="20220206 13:04:14.446" endtime="20220206 13:04:14.446"></status>
+<msg timestamp="20220205 09:57:20.291" level="INFO">${field} = Administration</msg>
+<status status="PASS" starttime="20220205 09:57:20.290" endtime="20220205 09:57:20.291"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -248,8 +248,8 @@
 <arg>${locator}</arg>
 <arg>${result}[0][2]</arg>
 </arguments>
-<msg timestamp="20220206 13:04:14.446" level="INFO">${locator} = //a[@id='topTabAdmin']</msg>
-<status status="PASS" starttime="20220206 13:04:14.446" endtime="20220206 13:04:14.446"></status>
+<msg timestamp="20220205 09:57:20.292" level="INFO">${locator} = //a[@id='topTabAdmin']</msg>
+<status status="PASS" starttime="20220205 09:57:20.291" endtime="20220205 09:57:20.292"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -257,8 +257,8 @@
 <arg>${beforewait}</arg>
 <arg>${result}[0][3]</arg>
 </arguments>
-<msg timestamp="20220206 13:04:14.447" level="INFO">${beforewait} = 20s</msg>
-<status status="PASS" starttime="20220206 13:04:14.447" endtime="20220206 13:04:14.447"></status>
+<msg timestamp="20220205 09:57:20.292" level="INFO">${beforewait} = 20s</msg>
+<status status="PASS" starttime="20220205 09:57:20.292" endtime="20220205 09:57:20.292"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -266,10 +266,10 @@
 <arg>${afterwait}</arg>
 <arg>${result}[0][4]</arg>
 </arguments>
-<msg timestamp="20220206 13:04:14.447" level="INFO">${afterwait} = 1s</msg>
-<status status="PASS" starttime="20220206 13:04:14.447" endtime="20220206 13:04:14.447"></status>
+<msg timestamp="20220205 09:57:20.293" level="INFO">${afterwait} = 1s</msg>
+<status status="PASS" starttime="20220205 09:57:20.293" endtime="20220205 09:57:20.293"></status>
 </kw>
-<status status="PASS" starttime="20220206 13:04:14.410" endtime="20220206 13:04:14.448"></status>
+<status status="PASS" starttime="20220205 09:57:20.239" endtime="20220205 09:57:20.293"></status>
 </kw>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
@@ -287,10 +287,10 @@
 <arg>${locator}</arg>
 <arg>${beforewait}</arg>
 </arguments>
-<status status="PASS" starttime="20220206 13:04:14.448" endtime="20220206 13:04:14.797"></status>
+<status status="PASS" starttime="20220205 09:57:20.293" endtime="20220205 09:57:20.322"></status>
 </kw>
-<msg timestamp="20220206 13:04:14.797" level="INFO">${keywordstatus} = True</msg>
-<status status="PASS" starttime="20220206 13:04:14.448" endtime="20220206 13:04:14.798"></status>
+<msg timestamp="20220205 09:57:20.322" level="INFO">${keywordstatus} = True</msg>
+<status status="PASS" starttime="20220205 09:57:20.293" endtime="20220205 09:57:20.323"></status>
 </kw>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
@@ -317,21 +317,21 @@
 <arguments>
 <arg>${locator}</arg>
 </arguments>
-<msg timestamp="20220206 13:04:14.799" level="INFO">Simulating Mouse Over on element '//a[@id='topTabAdmin']'.</msg>
-<status status="PASS" starttime="20220206 13:04:14.798" endtime="20220206 13:04:15.263"></status>
+<msg timestamp="20220205 09:57:20.323" level="INFO">Simulating Mouse Over on element '//a[@id='topTabAdmin']'.</msg>
+<status status="PASS" starttime="20220205 09:57:20.323" endtime="20220205 09:57:20.611"></status>
 </kw>
-<status status="PASS" starttime="20220206 13:04:14.798" endtime="20220206 13:04:15.264"></status>
+<status status="PASS" starttime="20220205 09:57:20.323" endtime="20220205 09:57:20.611"></status>
 </kw>
-<msg timestamp="20220206 13:04:15.264" level="INFO">${keywordstatus} = True</msg>
-<status status="PASS" starttime="20220206 13:04:14.798" endtime="20220206 13:04:15.264"></status>
+<msg timestamp="20220205 09:57:20.611" level="INFO">${keywordstatus} = True</msg>
+<status status="PASS" starttime="20220205 09:57:20.323" endtime="20220205 09:57:20.611"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>${afterwait}</arg>
 </arguments>
-<msg timestamp="20220206 13:04:16.273" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220206 13:04:15.264" endtime="20220206 13:04:16.273"></status>
+<msg timestamp="20220205 09:57:21.618" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220205 09:57:20.611" endtime="20220205 09:57:21.618"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -340,9 +340,9 @@
 <arg>Fail</arg>
 <arg>${fieldname} is not visible on the screen \ ${pagename}... so please check</arg>
 </arguments>
-<status status="PASS" starttime="20220206 13:04:16.274" endtime="20220206 13:04:16.274"></status>
+<status status="PASS" starttime="20220205 09:57:21.618" endtime="20220205 09:57:21.619"></status>
 </kw>
-<status status="PASS" starttime="20220206 13:04:14.410" endtime="20220206 13:04:16.274"></status>
+<status status="PASS" starttime="20220205 09:57:20.239" endtime="20220205 09:57:21.619"></status>
 </kw>
 <kw name="web_clickelement" library="Commonkeywords">
 <arguments>
@@ -361,31 +361,31 @@
 <arg>${pagename}</arg>
 <arg>${fieldname}</arg>
 </arguments>
-<msg timestamp="20220206 13:04:16.276" level="INFO">I:\OLA_Robot_Framework\git_automation\BB_Automation//Testdata//Objectrepo//objectrepo.xlsx</msg>
-<msg timestamp="20220206 13:04:16.276" level="INFO">landingpage</msg>
-<msg timestamp="20220206 13:04:16.276" level="INFO">add_edit_user</msg>
-<status status="PASS" starttime="20220206 13:04:16.275" endtime="20220206 13:04:16.276"></status>
+<msg timestamp="20220205 09:57:21.620" level="INFO">I:\OLA_Robot_Framework\git_automation\BB_Automation//Testdata//Objectrepo//objectrepo.xlsx</msg>
+<msg timestamp="20220205 09:57:21.621" level="INFO">landingpage</msg>
+<msg timestamp="20220205 09:57:21.621" level="INFO">add_edit_user</msg>
+<status status="PASS" starttime="20220205 09:57:21.620" endtime="20220205 09:57:21.621"></status>
 </kw>
 <kw name="Openexcel" library="excellib">
 <arguments>
 <arg>${ObjFile}</arg>
 <arg>Sheet</arg>
 </arguments>
-<status status="PASS" starttime="20220206 13:04:16.276" endtime="20220206 13:04:16.311"></status>
+<status status="PASS" starttime="20220205 09:57:21.621" endtime="20220205 09:57:21.646"></status>
 </kw>
 <kw name="Filterbasedonpagenameandfieldname" library="excellib">
 <arguments>
 <arg>${pagename}</arg>
 <arg>${fieldname}</arg>
 </arguments>
-<status status="PASS" starttime="20220206 13:04:16.312" endtime="20220206 13:04:16.314"></status>
+<status status="PASS" starttime="20220205 09:57:21.646" endtime="20220205 09:57:21.647"></status>
 </kw>
 <kw name="Converttolist" library="excellib">
 <assign>
 <var>${result}</var>
 </assign>
-<msg timestamp="20220206 13:04:16.314" level="INFO">${result} = [['landingpage', 'add_edit_user', "//a[text()='Add/Change/Remove Users']", '20s', '1s', nan]]</msg>
-<status status="PASS" starttime="20220206 13:04:16.314" endtime="20220206 13:04:16.314"></status>
+<msg timestamp="20220205 09:57:21.648" level="INFO">${result} = [['landingpage', 'add_edit_user', "//a[text()='Add/Change/Remove Users']", '20s', '1s', nan]]</msg>
+<status status="PASS" starttime="20220205 09:57:21.647" endtime="20220205 09:57:21.648"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -393,8 +393,8 @@
 <arg>${name}</arg>
 <arg>${result}[0][0]</arg>
 </arguments>
-<msg timestamp="20220206 13:04:16.315" level="INFO">${name} = landingpage</msg>
-<status status="PASS" starttime="20220206 13:04:16.315" endtime="20220206 13:04:16.315"></status>
+<msg timestamp="20220205 09:57:21.648" level="INFO">${name} = landingpage</msg>
+<status status="PASS" starttime="20220205 09:57:21.648" endtime="20220205 09:57:21.648"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -402,8 +402,8 @@
 <arg>${field}</arg>
 <arg>${result}[0][1]</arg>
 </arguments>
-<msg timestamp="20220206 13:04:16.315" level="INFO">${field} = add_edit_user</msg>
-<status status="PASS" starttime="20220206 13:04:16.315" endtime="20220206 13:04:16.315"></status>
+<msg timestamp="20220205 09:57:21.649" level="INFO">${field} = add_edit_user</msg>
+<status status="PASS" starttime="20220205 09:57:21.649" endtime="20220205 09:57:21.650"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -411,8 +411,8 @@
 <arg>${locator}</arg>
 <arg>${result}[0][2]</arg>
 </arguments>
-<msg timestamp="20220206 13:04:16.316" level="INFO">${locator} = //a[text()='Add/Change/Remove Users']</msg>
-<status status="PASS" starttime="20220206 13:04:16.316" endtime="20220206 13:04:16.316"></status>
+<msg timestamp="20220205 09:57:21.650" level="INFO">${locator} = //a[text()='Add/Change/Remove Users']</msg>
+<status status="PASS" starttime="20220205 09:57:21.650" endtime="20220205 09:57:21.650"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -420,8 +420,8 @@
 <arg>${beforewait}</arg>
 <arg>${result}[0][3]</arg>
 </arguments>
-<msg timestamp="20220206 13:04:16.316" level="INFO">${beforewait} = 20s</msg>
-<status status="PASS" starttime="20220206 13:04:16.316" endtime="20220206 13:04:16.316"></status>
+<msg timestamp="20220205 09:57:21.650" level="INFO">${beforewait} = 20s</msg>
+<status status="PASS" starttime="20220205 09:57:21.650" endtime="20220205 09:57:21.651"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -429,10 +429,10 @@
 <arg>${afterwait}</arg>
 <arg>${result}[0][4]</arg>
 </arguments>
-<msg timestamp="20220206 13:04:16.317" level="INFO">${afterwait} = 1s</msg>
-<status status="PASS" starttime="20220206 13:04:16.316" endtime="20220206 13:04:16.317"></status>
+<msg timestamp="20220205 09:57:21.651" level="INFO">${afterwait} = 1s</msg>
+<status status="PASS" starttime="20220205 09:57:21.651" endtime="20220205 09:57:21.651"></status>
 </kw>
-<status status="PASS" starttime="20220206 13:04:16.275" endtime="20220206 13:04:16.317"></status>
+<status status="PASS" starttime="20220205 09:57:21.620" endtime="20220205 09:57:21.651"></status>
 </kw>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
@@ -450,10 +450,10 @@
 <arg>${locator}</arg>
 <arg>${beforewait}</arg>
 </arguments>
-<status status="PASS" starttime="20220206 13:04:16.317" endtime="20220206 13:04:16.345"></status>
+<status status="PASS" starttime="20220205 09:57:21.651" endtime="20220205 09:57:21.677"></status>
 </kw>
-<msg timestamp="20220206 13:04:16.345" level="INFO">${keywordstatus} = True</msg>
-<status status="PASS" starttime="20220206 13:04:16.317" endtime="20220206 13:04:16.345"></status>
+<msg timestamp="20220205 09:57:21.677" level="INFO">${keywordstatus} = True</msg>
+<status status="PASS" starttime="20220205 09:57:21.651" endtime="20220205 09:57:21.677"></status>
 </kw>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
@@ -480,21 +480,21 @@
 <arguments>
 <arg>${locator}</arg>
 </arguments>
-<msg timestamp="20220206 13:04:16.347" level="INFO">Clicking element '//a[text()='Add/Change/Remove Users']'.</msg>
-<status status="PASS" starttime="20220206 13:04:16.347" endtime="20220206 13:04:17.717"></status>
+<msg timestamp="20220205 09:57:21.678" level="INFO">Clicking element '//a[text()='Add/Change/Remove Users']'.</msg>
+<status status="PASS" starttime="20220205 09:57:21.678" endtime="20220205 09:57:23.090"></status>
 </kw>
-<status status="PASS" starttime="20220206 13:04:16.346" endtime="20220206 13:04:17.717"></status>
+<status status="PASS" starttime="20220205 09:57:21.677" endtime="20220205 09:57:23.090"></status>
 </kw>
-<msg timestamp="20220206 13:04:17.717" level="INFO">${keywordstatus} = True</msg>
-<status status="PASS" starttime="20220206 13:04:16.345" endtime="20220206 13:04:17.717"></status>
+<msg timestamp="20220205 09:57:23.090" level="INFO">${keywordstatus} = True</msg>
+<status status="PASS" starttime="20220205 09:57:21.677" endtime="20220205 09:57:23.090"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>${afterwait}</arg>
 </arguments>
-<msg timestamp="20220206 13:04:18.726" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220206 13:04:17.717" endtime="20220206 13:04:18.726"></status>
+<msg timestamp="20220205 09:57:24.098" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220205 09:57:23.090" endtime="20220205 09:57:24.098"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -503,16 +503,16 @@
 <arg>Fail</arg>
 <arg>${fieldname} is not visible on the screen \ ${pagename}... so please check</arg>
 </arguments>
-<status status="PASS" starttime="20220206 13:04:18.726" endtime="20220206 13:04:18.727"></status>
+<status status="PASS" starttime="20220205 09:57:24.098" endtime="20220205 09:57:24.099"></status>
 </kw>
-<status status="PASS" starttime="20220206 13:04:16.274" endtime="20220206 13:04:18.727"></status>
+<status status="PASS" starttime="20220205 09:57:21.620" endtime="20220205 09:57:24.099"></status>
 </kw>
 <kw name="Handle Alert" library="SeleniumLibrary">
 <doc>Handles the current alert and returns its message.</doc>
 <arguments>
 <arg>ACCEPT</arg>
 </arguments>
-<status status="PASS" starttime="20220206 13:04:18.727" endtime="20220206 13:04:18.733"></status>
+<status status="PASS" starttime="20220205 09:57:24.100" endtime="20220205 09:57:24.106"></status>
 </kw>
 <kw name="web_inputtext" library="Commonkeywords">
 <arguments>
@@ -532,31 +532,31 @@
 <arg>${pagename}</arg>
 <arg>${fieldname}</arg>
 </arguments>
-<msg timestamp="20220206 13:04:18.735" level="INFO">I:\OLA_Robot_Framework\git_automation\BB_Automation//Testdata//Objectrepo//objectrepo.xlsx</msg>
-<msg timestamp="20220206 13:04:18.735" level="INFO">add_edit_user</msg>
-<msg timestamp="20220206 13:04:18.735" level="INFO">Username</msg>
-<status status="PASS" starttime="20220206 13:04:18.735" endtime="20220206 13:04:18.735"></status>
+<msg timestamp="20220205 09:57:24.108" level="INFO">I:\OLA_Robot_Framework\git_automation\BB_Automation//Testdata//Objectrepo//objectrepo.xlsx</msg>
+<msg timestamp="20220205 09:57:24.108" level="INFO">add_edit_user</msg>
+<msg timestamp="20220205 09:57:24.108" level="INFO">Username</msg>
+<status status="PASS" starttime="20220205 09:57:24.107" endtime="20220205 09:57:24.108"></status>
 </kw>
 <kw name="Openexcel" library="excellib">
 <arguments>
 <arg>${ObjFile}</arg>
 <arg>Sheet</arg>
 </arguments>
-<status status="PASS" starttime="20220206 13:04:18.735" endtime="20220206 13:04:18.779"></status>
+<status status="PASS" starttime="20220205 09:57:24.108" endtime="20220205 09:57:24.147"></status>
 </kw>
 <kw name="Filterbasedonpagenameandfieldname" library="excellib">
 <arguments>
 <arg>${pagename}</arg>
 <arg>${fieldname}</arg>
 </arguments>
-<status status="PASS" starttime="20220206 13:04:18.780" endtime="20220206 13:04:18.782"></status>
+<status status="PASS" starttime="20220205 09:57:24.147" endtime="20220205 09:57:24.151"></status>
 </kw>
 <kw name="Converttolist" library="excellib">
 <assign>
 <var>${result}</var>
 </assign>
-<msg timestamp="20220206 13:04:18.783" level="INFO">${result} = [['add_edit_user', 'Username', '//td[text()="User Name"]/parent::tr/td[2]/input', '20s', '1s', nan]]</msg>
-<status status="PASS" starttime="20220206 13:04:18.783" endtime="20220206 13:04:18.783"></status>
+<msg timestamp="20220205 09:57:24.152" level="INFO">${result} = [['add_edit_user', 'Username', '//td[text()="User Name"]/parent::tr/td[2]/input', '20s', '1s', nan]]</msg>
+<status status="PASS" starttime="20220205 09:57:24.152" endtime="20220205 09:57:24.152"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -564,8 +564,8 @@
 <arg>${name}</arg>
 <arg>${result}[0][0]</arg>
 </arguments>
-<msg timestamp="20220206 13:04:18.784" level="INFO">${name} = add_edit_user</msg>
-<status status="PASS" starttime="20220206 13:04:18.783" endtime="20220206 13:04:18.784"></status>
+<msg timestamp="20220205 09:57:24.153" level="INFO">${name} = add_edit_user</msg>
+<status status="PASS" starttime="20220205 09:57:24.152" endtime="20220205 09:57:24.153"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -573,8 +573,8 @@
 <arg>${field}</arg>
 <arg>${result}[0][1]</arg>
 </arguments>
-<msg timestamp="20220206 13:04:18.784" level="INFO">${field} = Username</msg>
-<status status="PASS" starttime="20220206 13:04:18.784" endtime="20220206 13:04:18.784"></status>
+<msg timestamp="20220205 09:57:24.154" level="INFO">${field} = Username</msg>
+<status status="PASS" starttime="20220205 09:57:24.154" endtime="20220205 09:57:24.154"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -582,8 +582,8 @@
 <arg>${locator}</arg>
 <arg>${result}[0][2]</arg>
 </arguments>
-<msg timestamp="20220206 13:04:18.785" level="INFO">${locator} = //td[text()="User Name"]/parent::tr/td[2]/input</msg>
-<status status="PASS" starttime="20220206 13:04:18.784" endtime="20220206 13:04:18.785"></status>
+<msg timestamp="20220205 09:57:24.155" level="INFO">${locator} = //td[text()="User Name"]/parent::tr/td[2]/input</msg>
+<status status="PASS" starttime="20220205 09:57:24.155" endtime="20220205 09:57:24.156"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -591,8 +591,8 @@
 <arg>${beforewait}</arg>
 <arg>${result}[0][3]</arg>
 </arguments>
-<msg timestamp="20220206 13:04:18.785" level="INFO">${beforewait} = 20s</msg>
-<status status="PASS" starttime="20220206 13:04:18.785" endtime="20220206 13:04:18.785"></status>
+<msg timestamp="20220205 09:57:24.157" level="INFO">${beforewait} = 20s</msg>
+<status status="PASS" starttime="20220205 09:57:24.156" endtime="20220205 09:57:24.157"></status>
 </kw>
 <kw name="Set Test Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
@@ -600,10 +600,10 @@
 <arg>${afterwait}</arg>
 <arg>${result}[0][4]</arg>
 </arguments>
-<msg timestamp="20220206 13:04:18.787" level="INFO">${afterwait} = 1s</msg>
-<status status="PASS" starttime="20220206 13:04:18.786" endtime="20220206 13:04:18.787"></status>
+<msg timestamp="20220205 09:57:24.158" level="INFO">${afterwait} = 1s</msg>
+<status status="PASS" starttime="20220205 09:57:24.157" endtime="20220205 09:57:24.158"></status>
 </kw>
-<status status="PASS" starttime="20220206 13:04:18.734" endtime="20220206 13:04:18.787"></status>
+<status status="PASS" starttime="20220205 09:57:24.107" endtime="20220205 09:57:24.158"></status>
 </kw>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
@@ -621,10 +621,10 @@
 <arg>${locator}</arg>
 <arg>${beforewait}</arg>
 </arguments>
-<status status="PASS" starttime="20220206 13:04:18.788" endtime="20220206 13:04:19.839"></status>
+<status status="PASS" starttime="20220205 09:57:24.159" endtime="20220205 09:57:25.311"></status>
 </kw>
-<msg timestamp="20220206 13:04:19.839" level="INFO">${keywordstatus} = True</msg>
-<status status="PASS" starttime="20220206 13:04:18.787" endtime="20220206 13:04:19.839"></status>
+<msg timestamp="20220205 09:57:25.311" level="INFO">${keywordstatus} = True</msg>
+<status status="PASS" starttime="20220205 09:57:24.159" endtime="20220205 09:57:25.311"></status>
 </kw>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
@@ -654,21 +654,21 @@
 <arg>${locator}</arg>
 <arg>${inputtext}</arg>
 </arguments>
-<msg timestamp="20220206 13:04:19.839" level="INFO">Typing text 'karthikeyan' into text field '//td[text()="User Name"]/parent::tr/td[2]/input'.</msg>
-<status status="PASS" starttime="20220206 13:04:19.839" endtime="20220206 13:04:19.926"></status>
+<msg timestamp="20220205 09:57:25.313" level="INFO">Typing text 'karthikeyan' into text field '//td[text()="User Name"]/parent::tr/td[2]/input'.</msg>
+<status status="PASS" starttime="20220205 09:57:25.313" endtime="20220205 09:57:25.404"></status>
 </kw>
-<status status="PASS" starttime="20220206 13:04:19.839" endtime="20220206 13:04:19.926"></status>
+<status status="PASS" starttime="20220205 09:57:25.312" endtime="20220205 09:57:25.404"></status>
 </kw>
-<msg timestamp="20220206 13:04:19.926" level="INFO">${keywordstatus} = True</msg>
-<status status="PASS" starttime="20220206 13:04:19.839" endtime="20220206 13:04:19.926"></status>
+<msg timestamp="20220205 09:57:25.404" level="INFO">${keywordstatus} = True</msg>
+<status status="PASS" starttime="20220205 09:57:25.312" endtime="20220205 09:57:25.404"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>${afterwait}</arg>
 </arguments>
-<msg timestamp="20220206 13:04:20.930" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220206 13:04:19.926" endtime="20220206 13:04:20.930"></status>
+<msg timestamp="20220205 09:57:26.414" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220205 09:57:25.405" endtime="20220205 09:57:26.414"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -677,17 +677,17 @@
 <arg>Fail</arg>
 <arg>${fieldname} is not visible on the screen \ ${pagename}... so please check</arg>
 </arguments>
-<status status="PASS" starttime="20220206 13:04:20.931" endtime="20220206 13:04:20.931"></status>
+<status status="PASS" starttime="20220205 09:57:26.414" endtime="20220205 09:57:26.415"></status>
 </kw>
-<status status="PASS" starttime="20220206 13:04:18.733" endtime="20220206 13:04:20.931"></status>
+<status status="PASS" starttime="20220205 09:57:24.106" endtime="20220205 09:57:26.415"></status>
 </kw>
 <kw name="Close All Browsers" library="SeleniumLibrary" type="teardown">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20220206 13:04:20.932" endtime="20220206 13:04:23.026"></status>
+<status status="PASS" starttime="20220205 09:57:26.416" endtime="20220205 09:57:28.516"></status>
 </kw>
-<status status="PASS" starttime="20220206 13:04:09.605" endtime="20220206 13:04:23.026" critical="yes"></status>
+<status status="PASS" starttime="20220205 09:57:14.156" endtime="20220205 09:57:28.517" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20220206 13:04:07.943" endtime="20220206 13:04:23.026"></status>
+<status status="PASS" starttime="20220205 09:57:12.274" endtime="20220205 09:57:28.518"></status>
 </suite>
 <statistics>
 <total>

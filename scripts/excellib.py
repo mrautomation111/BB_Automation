@@ -7,7 +7,7 @@ class excellib:
         pass
 
     def openexcel(self,filename, sheetname):
-        self.df=pd.read_excel(filename,sheet_name=sheetname)
+        self.df=pd.read_excel(filename,sheet_name=sheetname,engine='openpyxl',)
         return self.df
 
     def filterbasedonkey(self,keycol,val):

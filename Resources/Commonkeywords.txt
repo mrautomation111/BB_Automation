@@ -3,6 +3,7 @@ Resource          ../Libraries/librarymanager.txt
 
 *** Variables ***
 ${ObjFile}        ${EXECDIR}//Testdata//Objectrepo//objectrepo.xlsx
+${BatchTemplateFile}    ${EXECDIR}//Testdata//PaymentsAndTransfers.xlsx
 
 *** Keywords ***
 web_clickelement
@@ -41,3 +42,17 @@ GetLocatorDetails
     Set Test Variable    ${locator}    ${result}[0][2]
     Set Test Variable    ${beforewait}    ${result}[0][3]
     Set Test Variable    ${afterwait}    ${result}[0][4]
+
+GetBatchTemplateDetails
+    [Arguments]    ${pagename}    ${fieldname}
+    [Timeout]
+    Comment    Log Many    ${BatchTemplateFile}    ${pagename}    ${fieldname}
+    Comment    excellib.Openexcel    ${BatchTemplateFile}     Sheet
+    Comment    excellib.Filterbasedonpagenameandfieldname    ${pagename}    ${fieldname}
+    Comment    ${result}    excellib.Converttolist
+    Comment    Set Test Variable    ${template_name}    ${result}[0][0]
+    Comment    Set Test Variable    ${template_description}    ${result}[0][1]
+    Comment    Set Test Variable    ${ACH_batch_class}    ${result}[0][2]
+    Comment    Set Test Variable    ${ACH_ID}    ${result}[0][3]
+    Comment    Set Test Variable    ${checkbox}    ${result}[0][4]
+    Comment    Set Test Variable    ${offset_account}    ${result}[0][5]
