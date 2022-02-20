@@ -10,3 +10,12 @@ ${browser}        gc
 Openbb_app
     Open Browser    ${url}    ${browser}
     web_clickelement    landingpage    loginlink
+
+Send_Email
+    [Arguments]    ${EmailNo}
+    Log Many    ${EmailFile}    ${EmailNo}
+    excellib.Openexcel    ${EmailFile}    Sheet1
+    excellib.filterbasedonalphabet    ${EmailNo}
+    ${result}    excellib.Converttolist
+    Set Test Variable    ${template_name}    ${result}[0][1]
+    Set Test Variable    ${template_description}    ${result}[0][2]

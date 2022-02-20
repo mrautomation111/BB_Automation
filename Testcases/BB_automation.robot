@@ -22,3 +22,11 @@ TC02_AddMainBatchTemplate_use_lower_case_letters
     web_createBatchTemplate    c
     web_createBatchTemplate    d
     [Teardown]    Close All Browsers
+
+TC03_SendMail
+    Openbb_app
+    web_clickelement    landingpage    EmailLink
+    web_clickelement    Emailpage    Preferred_Method_of_Contact
+    web_inputtext    Emailpage    Subject    "Email1"
+    web_inputtext    Emailpage    Message    Email1
+    web_clickelement    Emailpage    Submit
