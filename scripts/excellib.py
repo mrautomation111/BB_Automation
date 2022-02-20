@@ -7,7 +7,7 @@ class excellib:
         pass
 
     def openexcel(self,filename, sheetname):
-        self.df=pd.read_excel(filename,sheet_name=sheetname)
+        self.df=pd.read_excel(filename,sheet_name=sheetname,engine='openpyxl')
         return self.df
 
     def filterbasedonkey(self,keycol,val):
@@ -39,6 +39,6 @@ class excellib:
 
 # e=excellib()
 # e.openexcel("C:\\Users\\Sivakumar U\\Desktop\\RobotTEST\\BBAuto\\BB_Automation\\Testdata\\Objectrepo\\objectrepo.xlsx","Sheet")
-# # e.filterbasedonkey("Name","Ola")
+# # e.filterbasedonkey("Name","Ravi")
 # e.filterbasedonpagenameandfieldname('landingpage','loginlink')
 # print(e.Converttolist())

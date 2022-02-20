@@ -1,6 +1,9 @@
 *** Settings ***
 Resource          ../Libraries/librarymanager.txt
 Resource          Commonkeywords.txt
+Library           DateTime
+Library           ExcelLibrary
+Library           ../scripts/excellib.py
 
 *** Variables ***
 ${url}            https://bbsitedemo.btbanking.com/onlineserv/CM/?D=5472
@@ -9,4 +12,30 @@ ${browser}        gc
 *** Keywords ***
 Openbb_app
     Open Browser    ${url}    ${browser}
+    Maximize Browser Window
     web_clickelement    landingpage    loginlink
+
+CreateReports
+    GetLocatorDetails
+    Open Excel Document    ${EXECDIR}\\Testdata\\AccountActivitiesAndReporting.xlsx    CreateReports
+    Comment    Click Element    //a[@id='topTabAAR']
+    Comment    Click Element    //a[text()='Create Reports']
+    @{List_Accounts}    ExcelLibrary.Read Excel Column    1
+    FOR    ${i}    IN    @{List_Accounts}
+        Select Checkbox    //*[contains(text(),'${i}')]/ancestor::tr//input
+    END
+    @{List_Category}    ExcelLibrary.Read Excel Column    2
+    FOR    ${j}    IN    @{List_Category}
+        Select Checkbox    //td[text()='${j}']/ancestor::tr//input
+    END
+    ${TimeStamp}    Get Current Date
+    Input Text    //input[@id='repname']    AllDebitsReportName_${TimeStamp}
+    Input Text    //input[@name='reptitle']    AllDebitsReportTitle_${TimeStamp}
+    Click Element    //a[@id='buttonAdd']
+    Sleep    10s
+    Click Element    //a[@id='buttonDelete']
+    Sleep    10s
+    Click Element    //span[text()='Delete']//ancestor::button
+    Sleep    10s
+    Click Element    //a[text()='Log Out']
+    Close Current Excel Document
