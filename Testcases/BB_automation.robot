@@ -17,10 +17,10 @@ TC01_Accountsummaryverfication
     [Teardown]    Close All Browsers
 
 TC02_AddMainBatchTemplate_use_lower_case_letters
-    web_createBatchTemplate    a
-    web_createBatchTemplate    b
-    web_createBatchTemplate    c
-    web_createBatchTemplate    d
+    web_createBatchTemplate    TC01
+    web_createBatchTemplate    TC02
+    web_createBatchTemplate    TC03
+    web_createBatchTemplate    TC03
     [Teardown]    Close All Browsers
 
 TC03_SendMail
