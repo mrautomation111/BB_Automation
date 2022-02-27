@@ -5,6 +5,7 @@ Resource          Commonkeywords.txt
 *** Variables ***
 ${url}            https://bbsitedemo.btbanking.com/onlineserv/CM/?D=5472
 ${browser}        gc
+${EmailFile}      ${EXECDIR}//Testdata//EmailData.xlsx
 
 *** Keywords ***
 Openbb_app
@@ -13,9 +14,19 @@ Openbb_app
 
 Send_Email
     [Arguments]    ${EmailNo}
+    web_clickelement    landingpage    EmailLink
+    web_clickelement    Emailpage    Preferred_Method_of_Contact
+    GetEmailDetails    ${EmailNo}
+    web_inputtext    Emailpage    Subject    ${subject_name}
+    web_inputtext    Emailpage    Message    ${email_description}
+    web_clickelement    Emailpage    Submit
+
+GetEmailDetails
+    [Arguments]    ${EmailNo}
     Log Many    ${EmailFile}    ${EmailNo}
     excellib.Openexcel    ${EmailFile}    Sheet1
-    excellib.filterbasedonalphabet    ${EmailNo}
+    ${val}    excellib.filterbasedonalphabet    ${EmailNo}
     ${result}    excellib.Converttolist
-    Set Test Variable    ${template_name}    ${result}[0][1]
-    Set Test Variable    ${template_description}    ${result}[0][2]
+    Set Test Variable    ${subject_name}    ${result}[0][2]
+    Set Test Variable    ${email_description}    ${result}[0][3]
+    log    ${val}

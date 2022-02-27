@@ -25,8 +25,7 @@ TC02_AddMainBatchTemplate_use_lower_case_letters
 
 TC03_SendMail
     Openbb_app
-    web_clickelement    landingpage    EmailLink
-    web_clickelement    Emailpage    Preferred_Method_of_Contact
-    web_inputtext    Emailpage    Subject    "Email1"
-    web_inputtext    Emailpage    Message    Email1
-    web_clickelement    Emailpage    Submit
+    Maximize Browser Window
+    Send_Email    a
+    Send_Email    b
+    Send_Email    c

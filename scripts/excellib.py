@@ -33,3 +33,12 @@ class excellib:
         df=self.f_rowdata.values.tolist()
         self.listval=df
         return self.listval
+
+
+# e=excellib()
+# e.openexcel("C:\\Users\\tsuri\\OneDrive\\Desktop\\Mani\\Project\\BB_Automation\\Testdata\\EmailData.xlsx","Sheet1")
+# e.filterbasedonkey("Name","Ola")
+# e.filterbasedonpagenameandfieldname('landingpage','loginlink')
+# print(e.Converttolist())
+# e.filterbasedonalphabet(3)
+# print(e.converttolist())
