@@ -4,6 +4,7 @@ Resource          ../Libraries/librarymanager.txt
 *** Variables ***
 ${ObjFile}        ${EXECDIR}//Testdata//Objectrepo//objectrepo.xlsx
 ${BatchTemplateFile}    ${EXECDIR}//Testdata//PaymentsAndTransfers.xlsx
+${CreateReports}    ${EXECDIR}\\Testdata\\AccountActivitiesAndReporting.xlsx
 
 *** Keywords ***
 web_clickelement

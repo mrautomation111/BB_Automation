@@ -7,11 +7,7 @@ class excellib:
         pass
 
     def openexcel(self,filename, sheetname):
-<<<<<<< HEAD
         self.df=pd.read_excel(filename,sheet_name=sheetname,engine='openpyxl')
-=======
-        self.df=pd.read_excel(filename,sheet_name=sheetname,engine='openpyxl',)
->>>>>>> 8f363365ecd37f59a8d762a8c1092cb17fca295f
         return self.df
 
     def filterbasedonkey(self,keycol,val):
@@ -37,7 +33,6 @@ class excellib:
         df=self.f_rowdata.values.tolist()
         self.listval=df
         return self.listval
-<<<<<<< HEAD
 
 
 
@@ -54,5 +49,3 @@ class excellib:
 # # e.filterbasedonkey("Name","Ravi")
 # e.filterbasedonpagenameandfieldname('landingpage','loginlink')
 # print(e.Converttolist())
-=======
->>>>>>> 8f363365ecd37f59a8d762a8c1092cb17fca295f

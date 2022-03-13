@@ -16,10 +16,9 @@ Openbb_app
     web_clickelement    landingpage    loginlink
 
 CreateReports
-    GetLocatorDetails
-    Open Excel Document    ${EXECDIR}\\Testdata\\AccountActivitiesAndReporting.xlsx    CreateReports
-    Comment    Click Element    //a[@id='topTabAAR']
-    Comment    Click Element    //a[text()='Create Reports']
+    web_clickelement    landingpage    Account activities and reporting
+    web_clickelement    Account activities and reporting    Create reports
+    Open Excel Document    ${CreateReports}    CreateReports
     @{List_Accounts}    ExcelLibrary.Read Excel Column    1
     FOR    ${i}    IN    @{List_Accounts}
         Select Checkbox    //*[contains(text(),'${i}')]/ancestor::tr//input
@@ -28,14 +27,12 @@ CreateReports
     FOR    ${j}    IN    @{List_Category}
         Select Checkbox    //td[text()='${j}']/ancestor::tr//input
     END
-    ${TimeStamp}    Get Current Date
-    Input Text    //input[@id='repname']    AllDebitsReportName_${TimeStamp}
-    Input Text    //input[@name='reptitle']    AllDebitsReportTitle_${TimeStamp}
-    Click Element    //a[@id='buttonAdd']
-    Sleep    10s
-    Click Element    //a[@id='buttonDelete']
-    Sleep    10s
-    Click Element    //span[text()='Delete']//ancestor::button
-    Sleep    10s
-    Click Element    //a[text()='Log Out']
-    Close Current Excel Document
+    ${date}    Get Current Date    result_format=datetime
+    web_inputtext    Create reports    Report Name    AllDebitsReportName
+    web_inputtext    Create reports    Report Title    AllDebitsReportTitle_${date.year}${date.month}${date.day}${date.hour}${date.minute}
+    web_clickelement    Create reports    Add Report
+    web_clickelement    Create reports    Delete Report
+    web_clickelement    Create reports    Delete_Message_Window
+    web_clickelement    landingpage    Log Out
+    Close All Excel Documents
+    Close Browser
