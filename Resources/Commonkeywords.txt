@@ -43,31 +43,3 @@ GetLocatorDetails
     Set Test Variable    ${locator}    ${result}[0][2]
     Set Test Variable    ${beforewait}    ${result}[0][3]
     Set Test Variable    ${afterwait}    ${result}[0][4]
-
-GetBatchTemplateDetails
-    [Arguments]    ${batchtemplatenumber}
-    [Timeout]
-    Log Many    ${BatchTemplateFile}    ${batchtemplatenumber}
-    excellib.Openexcel    ${BatchTemplateFile}    Maintain batch template
-    excellib.filterbasedonalphabet    ${batchtemplatenumber}
-    ${result}    excellib.Converttolist
-    Set Test Variable    ${template_name}    ${result}[0][1]
-    Set Test Variable    ${template_description}    ${result}[0][2]
-
-web_createBatchTemplate
-    [Arguments]    ${batchtemplatenumber}
-    Openbb_app
-    Maximize Browser Window
-    web_Mouseover    landingpage    payments_transfers
-    web_clickelement    payments_transfers    maintain_batch_template
-    web_clickelement    maintain_batch_template    add_new
-    GetBatchTemplateDetails    ${batchtemplatenumber}
-    web_inputtext    maintain_batch_template    template_name    ${template_name}
-    web_inputtext    maintain_batch_template    template_desc    ${template_description}
-    web_clickelement    maintain_batch_template    ACH_batch_class
-    web_clickelement    maintain_batch_template    ACH_batch_class_option
-    web_clickelement    maintain_batch_template    ACH_ID
-    web_clickelement    maintain_batch_template    ACH_ID_option
-    Unselect Checkbox    //input[@name='offsetTrans']
-    Checkbox Should Not Be Selected    //input[@name='offsetTrans']
-    web_clickelement    maintain_batch_template    add_button

@@ -8,6 +8,7 @@ Library           ../scripts/excellib.py
 *** Variables ***
 ${url}            https://bbsitedemo.btbanking.com/onlineserv/CM/?D=5472
 ${browser}        gc
+${EmailFile}      ${EXECDIR}//Testdata//EmailData.xlsx
 
 *** Keywords ***
 Openbb_app
@@ -15,6 +16,7 @@ Openbb_app
     Maximize Browser Window
     web_clickelement    landingpage    loginlink
 
+<<<<<<< HEAD
 CreateReports
     web_clickelement    landingpage    Account activities and reporting
     web_clickelement    Account activities and reporting    Create reports
@@ -36,3 +38,51 @@ CreateReports
     web_clickelement    landingpage    Log Out
     Close All Excel Documents
     Close Browser
+=======
+Send_Email
+    [Arguments]    ${EmailNo}
+    web_clickelement    landingpage    EmailLink
+    web_clickelement    Emailpage    Preferred_Method_of_Contact
+    GetEmailDetails    ${EmailNo}
+    web_inputtext    Emailpage    Subject    ${subject_name}
+    web_inputtext    Emailpage    Message    ${email_description}
+    web_clickelement    Emailpage    Submit
+
+GetEmailDetails
+    [Arguments]    ${EmailNo}
+    Log Many    ${EmailFile}    ${EmailNo}
+    excellib.Openexcel    ${EmailFile}    Sheet1
+    ${val}    excellib.filterbasedonalphabet    ${EmailNo}
+    ${result}    excellib.Converttolist
+    Set Test Variable    ${subject_name}    ${result}[0][2]
+    Set Test Variable    ${email_description}    ${result}[0][3]
+    log    ${val}
+
+GetBatchTemplateDetails
+    [Arguments]    ${batchtemplatenumber}
+    [Timeout]
+    Log Many    ${BatchTemplateFile}    ${batchtemplatenumber}
+    excellib.Openexcel    ${BatchTemplateFile}    Maintain batch template
+    excellib.filterbasedonalphabet    ${batchtemplatenumber}
+    ${result}    excellib.Converttolist
+    Set Test Variable    ${template_name}    ${result}[0][1]
+    Set Test Variable    ${template_description}    ${result}[0][2]
+
+web_createBatchTemplate
+    [Arguments]    ${batchtemplatenumber}
+    Openbb_app
+    Maximize Browser Window
+    web_Mouseover    landingpage    payments_transfers
+    web_clickelement    payments_transfers    maintain_batch_template
+    web_clickelement    maintain_batch_template    add_new
+    GetBatchTemplateDetails    ${batchtemplatenumber}
+    web_inputtext    maintain_batch_template    template_name    ${template_name}
+    web_inputtext    maintain_batch_template    template_desc    ${template_description}
+    web_clickelement    maintain_batch_template    ACH_batch_class
+    web_clickelement    maintain_batch_template    ACH_batch_class_option
+    web_clickelement    maintain_batch_template    ACH_ID
+    web_clickelement    maintain_batch_template    ACH_ID_option
+    Unselect Checkbox    //input[@name='offsetTrans']
+    Checkbox Should Not Be Selected    //input[@name='offsetTrans']
+    web_clickelement    maintain_batch_template    add_button
+>>>>>>> 48fbad3d6de895396bb7334742ace6db18f33208

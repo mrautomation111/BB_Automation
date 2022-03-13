@@ -19,13 +19,22 @@ TC01_Accountsummaryverfication
     web_inputtext    add_edit_user    Username    karthikeyan
 
 TC02_AddMainBatchTemplate_use_lower_case_letters
-    web_createBatchTemplate    a
-    web_createBatchTemplate    b
-    web_createBatchTemplate    c
-    web_createBatchTemplate    d
+    web_createBatchTemplate    TC01
+    web_createBatchTemplate    TC02
+    web_createBatchTemplate    TC03
+    web_createBatchTemplate    TC03
     [Teardown]    Close All Browsers
 
+<<<<<<< HEAD
 TC04_AccountActivitiesAndRreporting_CreateReports
     Openbb_app
     Sleep    10s
     CreateReports
+=======
+TC03_SendMail
+    Openbb_app
+    Maximize Browser Window
+    Send_Email    a
+    Send_Email    b
+    Send_Email    c
+>>>>>>> 48fbad3d6de895396bb7334742ace6db18f33208

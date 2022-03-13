@@ -35,6 +35,7 @@ class excellib:
         return self.listval
 
 
+<<<<<<< HEAD
 
 
 
@@ -49,3 +50,12 @@ class excellib:
 # # e.filterbasedonkey("Name","Ravi")
 # e.filterbasedonpagenameandfieldname('landingpage','loginlink')
 # print(e.Converttolist())
+=======
+# e=excellib()
+# e.openexcel("C:\\Users\\tsuri\\OneDrive\\Desktop\\Mani\\Project\\BB_Automation\\Testdata\\EmailData.xlsx","Sheet1")
+# e.filterbasedonkey("Name","Ola")
+# e.filterbasedonpagenameandfieldname('landingpage','loginlink')
+# print(e.Converttolist())
+# e.filterbasedonalphabet(3)
+# print(e.converttolist())
+>>>>>>> 48fbad3d6de895396bb7334742ace6db18f33208
